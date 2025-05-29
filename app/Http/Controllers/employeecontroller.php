@@ -36,7 +36,6 @@ class employeecontroller extends Controller
     return view ('employee.create');
     }
 
-<<<<<<< HEAD
     public function edit( int $id)
     {
         $employees = ::($id);
@@ -65,7 +64,4 @@ class employeecontroller extends Controller
         $employees->delete();
         return redirect ()->back()->with('status','Employee Deleted');
     }
-=======
-    
->>>>>>> d8955408af77cb75d21b4c81171c344bd5a69047
 }
