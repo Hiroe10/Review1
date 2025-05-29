@@ -16,7 +16,7 @@
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-        <a href="" class="btn btn-info">Add New Employee</a>
+        <a href="{{ route('employee.create') }}" class="btn btn-info">Add New Employee</a>
         <div class="row">
 
        
@@ -43,23 +43,23 @@
                         </thead>
 
                         <tbody  >
-                            @foreach ($employees)
+                            @foreach ($employees as $data)
                             <tr>
                                 
-                                <td class=""></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                {{-- <td> 
-                                    <span class="badge bg-success"><a href="{{  route('employee.edit')}}" class="btn btn-success mx-3  "><h5>Edit</h5></a></span>
+                                <td class="">{{ $data->id }}</td>
+                                <td>{{ $data->fname }}</td>
+                                <td>{{ $data->lname }}</td>
+                                <td>{{ $data->midname }}</td>
+                                <td>{{ $data->age }}</td>
+                                <td>{{ $data->address }}</td>
+                                <td>{{ $data->zip }}</td>
+                                <td> 
+                                    <span class="badge bg-success"><a href="{{  route('employee.edit',$data->id)}}" class="btn btn-success mx-3  "><h5>Edit</h5></a></span>
                                 </td>
                                 <td> 
                                     
-                                <span class="badge bg-danger"><a href="{{  route('employee.delete')}}" class="m-3 p-lg-5"><h5>Delete</h5></a></span>
-                                </td> --}}
+                                <span class="badge bg-danger"><a href="{{  route('employee.delete',$data->id)}}" class="m-3 p-lg-5"><h5>Delete</h5></a></span>
+                                </td>
                                 
                             </tr>
                             @endforeach
